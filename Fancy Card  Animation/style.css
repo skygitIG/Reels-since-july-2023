@@ -1,0 +1,63 @@
+body{
+  background-color: #000000;
+}
+
+.active {
+  cursor: pointer;
+  background-color: #34d399;
+}
+
+.active :is(h2, p) {
+  position: relative;
+  z-index: 2;
+}
+
+.active :is(span, p) {
+  color: #f3f4f6;
+}
+
+.circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  z-index: 0;
+  top: 0;
+  right: 0;
+}
+
+.grid-offer :is(p, a) {
+  opacity: 0;
+}
+
+.active :is(p, a) {
+  opacity: 1;
+  transition: 0.5s 0.1s ease-in-out;
+}
+
+.grid-offer .active:nth-child(1) .circle {
+  background: url("https://cdn.pixabay.com/photo/2017/08/13/07/47/lighthouse-2636468_960_720.png") no-repeat 50% 50% / cover;
+}
+
+.grid-offer .active:nth-child(2) .circle {
+  background: url("https://cdn.pixabay.com/photo/2019/10/11/16/21/sea-4542240_960_720.png") no-repeat 50% 50% / cover;
+}
+
+.grid-offer .active:nth-child(3) .circle {
+  background: url("https://cdn.pixabay.com/photo/2019/10/13/19/45/boat-4547083_960_720.png") no-repeat 50% 50% / cover;
+}
+
+.active .circle {
+  clip-path: circle(110px at 100% 0%);
+}
+
+.active:hover .circle {
+  clip-path: circle(150px at 100% 0%);
+}
+
+@media screen and (min-width: 1200px) {
+  .active {
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+  }
+}
