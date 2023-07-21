@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Alegreya Sans", sans-serif;
+}
+
+body {
+	display: grid;
+	place-content: center;
+	min-height: 100vh;
+	background-color: #1e1e1e;
+}
+
+ul {
+	position: relative;
+	display: flex;
+	gap: 28px;
+}
+
+ul li {
+	position: relative;
+	list-style: none;
+	width: 72px;
+	height: 72px;
+	border-radius: 72px;
+	background: #1e1e1e;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 0 0 2px #fff;
+	transition: 300ms;
+}
+
+ul li:hover {
+	width: 160px;
+	box-shadow: 0 0 0 2px var(--bg-color);
+}
+
+ul li::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: 32px;
+	background: var(--bg-color);
+	opacity: 0;
+	transition: 300ms;
+}
+
+ul li:hover::before {
+	opacity: 1;
+}
+
+ul li span {
+	position: absolute;
+}
+
+ul li i {
+	color: #fff;
+	font-size: 2em;
+	transition: 300ms;
+	transition-delay: 150ms;
+}
+
+ul li:hover i {
+	transform: scale(0);
+	color: #fff;
+	transition-delay: 0s;
+}
+
+ul li .text {
+	color: #1e1e1e;
+	font-size: 1.5em;
+	z-index: 1;
+	text-transform: uppercase;
+	font-weight: 400;
+	letter-spacing: 0.024em;
+	opacity: 0;
+	transition: 300ms;
+	letter-spacing: -0.125px;
+}
+
+ul li:hover .text {
+	opacity: 1;
+}
