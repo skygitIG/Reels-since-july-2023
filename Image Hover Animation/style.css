@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #1e1e1e;
+    padding-top: 100px;
+}
+
+.container {
+    display: flex;
+}
+
+.card {
+    flex: 1;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.card img {
+    object-fit: cover;
+    filter: grayscale(1);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.card:hover {
+    flex: 3;
+    transition: 0.5s;
+}
+
+.card:hover img {
+    filter: none;
+    transition: 0.5s;
+}
