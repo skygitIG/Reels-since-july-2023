@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>@sky.git - Passcode With Sliding Cursor</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&amp;display=swap'>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+	<form class="passcode" onsubmit="">
+		<label for="digit1" class="passcode__sr">1st Digit</label>
+		<input id="digit1" class="passcode__digit" type="number" name="digit1" min="0" max="9" placeholder=" ">
+		<label for="digit2" class="passcode__sr">2nd Digit</label>
+		<input id="digit2" class="passcode__digit" type="number" name="digit2" min="0" max="9" placeholder=" ">
+		<label for="digit3" class="passcode__sr">3rd Digit</label>
+		<input id="digit3" class="passcode__digit" type="number" name="digit3" min="0" max="9" placeholder=" ">
+		<label for="digit4" class="passcode__sr">4th Digit</label>
+		<input id="digit4" class="passcode__digit" type="number" name="digit4" min="0" max="9" placeholder=" ">
+		<button class="passcode__button" type="button" data-enter>
+			<svg class="passcode__arrow" viewBox="0 0 16 16" width="16px" height="16px">
+				<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<polyline points="8 1,15 8,8 15" />
+					<polyline points="1 8,15 8" />
+				</g>
+			</svg>
+			<span class="passcode__sr">Enter</span>
+		</button>
+		<div class="passcode__caret"></div>
+		<div class="passcode__caret-move passcode__caret-move--1"></div>
+		<div class="passcode__caret-move passcode__caret-move--2"></div>
+		<div class="passcode__caret-move passcode__caret-move--3"></div>
+		<div class="passcode__caret-move passcode__caret-move--4"></div>
+		<div class="passcode__caret-move passcode__caret-move--5"></div>
+	</form>
+	<script src="script.js"></script>
+
+</body>
+
+</html>
