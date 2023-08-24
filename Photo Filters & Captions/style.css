@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background-color: #1e1e1e;
+}
+
+figure {
+    position: relative;
+    width: 220px;
+    height: 320px;
+    overflow: hidden;
+    margin: 0 10px;
+    border-radius: 0.6rem;
+}
+
+figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+}
+
+figcaption {
+    background-color: rgba(48, 48, 48, 0.3);
+    color: #fff2de;
+    padding: 10px 15px;
+    margin: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 42px;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.caption-title {
+    font-size: 1.2em;
+}
+
+.caption-full {
+    opacity: 0;
+    margin-top: 10px;
+}
+
+.expanded {
+    height: 100%;
+    transition: 0.5s ease-in-out;
+    background-color: rgba(48, 48, 48, 0.7);
+}
+
+.visible {
+    opacity: 100;
+}
+
+.image-filter {
+    filter: blur(5px) contrast(90%);
+}
