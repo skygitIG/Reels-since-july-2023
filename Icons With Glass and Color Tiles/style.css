@@ -1,0 +1,161 @@
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--hue: 223;
+	--bg: hsl(var(--hue), 10%, 90%);
+	--fg: hsl(var(--hue), 10%, 10%);
+	--trans-dur: 0.3s;
+	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (2560 - 320));
+}
+
+body,
+button {
+	color: var(--fg);
+	font: 1em/1.5 Nunito, sans-serif;
+}
+
+body {
+	background-color: #1e1e1e;
+	display: flex;
+	height: 100vh;
+	transition:
+		background-color var(--trans-dur),
+		color var(--trans-dur);
+}
+
+.icon-btns {
+	display: grid;
+	grid-gap: 3em;
+	grid-template-columns: repeat(2, 1fr);
+	margin: auto;
+	padding: 3em 0;
+}
+
+.icon-btn {
+	background-color: transparent;
+	outline: transparent;
+	position: relative;
+	width: 4.5em;
+	height: 4.5em;
+	perspective: 24em;
+	transform-style: preserve-3d;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.icon-btn__back,
+.icon-btn__front,
+.icon-btn__label {
+	transition:
+		opacity var(--trans-dur) cubic-bezier(0.83, 0, 0.17, 1),
+		transform var(--trans-dur) cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.icon-btn__back,
+.icon-btn__front {
+	border-radius: 1.25em;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.icon-btn__back {
+	background: linear-gradient(hsl(var(--hue), 10%, 50%), hsl(208, 10%, 50%));
+	box-shadow: 0.5em -0.5em 0.75em hsla(var(--hue), 10%, 10%, 0.15);
+	display: block;
+	transform: rotate(15deg);
+	transform-origin: 100% 100%;
+}
+
+.icon-btn__front {
+	background-color: hsla(0, 0%, 100%, 0.3);
+	box-shadow: 0 0 0 0.125em hsla(0, 0%, 100%, 0.3) inset;
+	backdrop-filter: blur(0.75em);
+	-webkit-backdrop-filter: blur(0.75em);
+	display: flex;
+	transform-origin: 80% 50%;
+}
+
+.icon-btn--blue .icon-btn__back {
+	background: linear-gradient(hsl(var(--hue), 90%, 50%), hsl(208, 90%, 50%));
+}
+
+.icon-btn--green .icon-btn__back {
+	background: linear-gradient(hsl(123, 90%, 40%), hsl(108, 90%, 40%));
+}
+
+.icon-btn--indigo .icon-btn__back {
+	background: linear-gradient(hsl(253, 90%, 50%), hsl(238, 90%, 50%));
+}
+
+.icon-btn--purple .icon-btn__back {
+	background: linear-gradient(hsl(283, 90%, 50%), hsl(268, 90%, 50%));
+}
+
+.icon-btn--red .icon-btn__back {
+	background: linear-gradient(hsl(3, 90%, 50%), hsl(348, 90%, 50%));
+}
+
+.icon-btn--orange .icon-btn__back {
+	background: linear-gradient(hsl(43, 90%, 50%), hsl(28, 90%, 50%));
+}
+
+.icon-btn__icon {
+	margin: auto;
+	width: 1.5em;
+	height: 1.5em;
+}
+
+.icon-btn__label {
+	font-size: 0.75em;
+	line-height: 2;
+	opacity: 0;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	left: 0;
+	transform: translateY(0);
+}
+
+.icon-btn:focus-visible .icon-btn__back,
+.icon-btn:hover .icon-btn__back {
+	transform: rotate(22.5deg);
+}
+
+.icon-btn:focus-visible .icon-btn__front,
+.icon-btn:hover .icon-btn__front {
+	transform: translateZ(3em) rotateX(20deg) rotateY(20deg);
+}
+
+.icon-btn:focus-visible .icon-btn__label,
+.icon-btn:hover .icon-btn__label {
+	opacity: 1;
+	transform: translateY(20%);
+}
+
+.sprites {
+	display: block;
+	position: fixed;
+	transform: translateY(-100%);
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue), 10%, 30%);
+		--fg: hsl(var(--hue), 10%, 90%);
+	}
+}
+
+/* Beyond mobile */
+@media (min-width: 768px) {
+	.icon-btns {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
