@@ -1,0 +1,134 @@
+/**
+ * ---------------------------------------------
+ * Best result is on FireFox ( of course! :D )
+ * ---------------------------------------------
+ */
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style: italic;
+  font-weight: 800;
+  src: local('Merriweather Sans ExtraBold Italic'), local('MerriweatherSans-ExtraBldItalic'), url(http://fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVfrUSW10CwTuVx9PepRx9ls.woff2) format('woff2'), url(http://fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVW2xy75WLVt7UI7Cycabsy8.woff) format('woff');
+}
+
+@font-face {
+	font-family: "open";
+	font-style: normal;
+	font-weight: 300;
+	src: local( "Open Sans Light" ), local( "OpenSans-Light" ), 
+		url( https://themes.googleusercontent.com/static/fonts/opensans/v6/DXI1ORHCpsQm3Vp6mXoaTZ1r3JsPcQLi8jytr04NNhU.woff ) format( 'woff' );
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	font-weight: normal;
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+	background: #1e1e1e;
+}
+
+body {
+	padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.section {
+	width: 400px;
+	margin: 7px auto;
+	height: 60px;
+	box-shadow: 0 1px 2px rgba( 0, 0, 0, .2 );
+	overflow: hidden;
+	transition: .35s;
+}
+
+.title {
+	padding: 20px;
+	padding-top: 24px;
+	background: #00c3b9;
+	color: #1e1e1e;
+	cursor: pointer;
+	text-shadow: 0 1px 0 #666;
+	width: 100%;
+	text-transform: capitalize;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	position: relative;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	z-index: 10;
+}
+
+.title:before, .title:after {
+	content: "";
+	display: block;
+	position: absolute;
+	right: 20px;
+	top: 21px;
+  font-style: normal;
+	height: 21px;
+  line-height: 1;
+	overflow: hidden;
+	font-family: FontAwesome;
+	font-size: 20px;
+	background: #00c3b9;
+	transition: .35s;
+}
+
+.title:before {
+	z-index: 2;
+}
+.title:after {
+	top: 25px;
+	transform: rotate( 180deg );
+}
+
+.open .title:before {
+	height: 0;
+}
+
+.body {
+	font: 16px open, sans-serif;
+	background: #d3d3d3;
+	padding: 20px 20px 40px;
+	color: #000000;
+	transform: translateY( -100% );
+	overflow: hidden;
+	transition: .35s;
+}
+	.body h2 {
+		color: #333;
+		font-size: 22px;
+		margin-bottom: 10px;
+	}
+	.body h2:before {
+		content: '▪';
+		padding-right: 7px;
+		color: #003b38;
+	}
+	.body a {
+		color: #003b38;
+		font-weight: 600;
+		text-decoration: underline;
+	}
+	.body span {
+		font-size: 12px;
+	}
+	
+.section.open {
+	height: 288px;
+}
+.open .body {
+	transform: none;
+}
