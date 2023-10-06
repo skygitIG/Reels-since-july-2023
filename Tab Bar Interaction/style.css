@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1e1e1e;
+  overflow: hidden;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav a {
+  position: relative;
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-weight: bold;
+  color: #969493;
+  margin: 0 1rem;
+  transition: text-shadow 300ms ease, color 300ms ease;
+}
+nav a .slide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #4df9ff;
+  transform: scaleX(0);
+}
+nav a.active {
+  color: #4df9ff;
+  text-shadow: 0 0 20px #4df9ff7c;
+}
+nav a:focus {
+  outline: none;
+  border: none;
+}
+
+.text{
+  font-size: 2.5rem;
+}
+
+nav a .text:hover{
+  color: #fff;
+  /* font-size: 3rem; */
+  /* transition: 0.5s; */
+}
