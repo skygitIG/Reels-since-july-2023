@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    position: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1e1e1e;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    --width: 120px;
+    --height: 50px;
+    border: 0;
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    font-size: 0.95rem;
+    font-family: "Montserrat";
+    font-weight: bold;
+    margin: 1rem;
+    border-radius: 0.5em;
+    cursor: pointer;
+    overflow: hidden;
+    background: none;
+}
+
+button:nth-child(1) {
+    background: #ffdfd0;
+    color: #ff702e;
+}
+
+button:nth-child(2) {
+    color: #ff702e;
+    border: 2px solid #ff702e;
+}
+
+button span {
+    position: relative;
+    z-index: 2;
+    transition: color 200ms ease;
+}
+
+button div {
+    position: absolute;
+    width: calc(3 * var(--width));
+    height: calc(3 * var(--height));
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #ff702e;
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 500ms ease;
+    z-index: 1;
+}
+
+button:hover span {
+    color: #1e1e1e;
+}
+
+button:hover div {
+    clip-path: circle(100% at 50% 50%);
+}
