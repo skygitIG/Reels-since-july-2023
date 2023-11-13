@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+    background: #1e1e1e;
+    scrollbar-color: #ef5350 #ffe;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.9rem;
+    color: #1e1e1e;
+}
+
+ul {
+    list-style: none;
+    width: min(90vw, 51rem);
+    max-width: 51rem;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 2rem;
+}
+
+li {
+    flex: 0 0 45vw;
+    max-width: 18rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 20rem;
+}
+
+li span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    padding: 0.75em;
+    height: 100%;
+    writing-mode: vertical-lr;
+    text-align: center;
+    transform: rotate(180deg);
+}
+
+li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%, -50%);
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, #b942f5 1%, transparent 50%);
+    z-index: -1;
+}
+
+li img {
+    display: block;
+    height: 20rem;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -50%);
+    z-index: -2;
+}
+
+@media (min-width: 53rem) {
+    li:nth-child(1) {
+        left: 0rem;
+    }
+
+    li:nth-child(2) {
+        left: 2.2rem;
+    }
+
+    li:nth-child(3) {
+        left: 4.4rem;
+    }
+
+    li:nth-child(4) {
+        left: 6.6rem;
+    }
+
+    li:nth-child(5) {
+        left: 8.8rem;
+    }
+
+    li:nth-child(6) {
+        left: 11rem;
+    }
+
+    li:nth-child(7) {
+        left: 13.2rem;
+    }
+
+    li:nth-child(8) {
+        left: 15.4rem;
+    }
+
+    li:nth-child(9) {
+        left: 17.6rem;
+    }
+
+    li:nth-child(10) {
+        left: 19.8rem;
+    }
+
+    li:nth-child(11) {
+        left: 22rem;
+    }
+
+    li:nth-child(12) {
+        left: 24.2rem;
+    }
+
+    li:nth-child(13) {
+        left: 26.4rem;
+    }
+
+    li:nth-child(14) {
+        left: 28.6rem;
+    }
+
+    li:nth-child(15) {
+        left: 30.8rem;
+    }
+}
